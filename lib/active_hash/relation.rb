@@ -5,6 +5,9 @@ module ActiveHash
     delegate :each, to: :records # Make Enumerable work
     delegate :equal?, :==, :===, :eql?, :sort!, to: :records
     delegate :empty?, :length, :first, :second, :third, :last, to: :records
+    delegate :[], :&, :|, :+, :-, :sample, :reverse, :rotate, :compact,
+             :in_groups, :in_groups_of, :to_sentence, :to_formatted_s, :as_json,
+             :shuffle, :split, :slice, :index, :rindex, to: :records
         
     def initialize(klass, all_records, query_hash = nil)
       self.klass = klass
